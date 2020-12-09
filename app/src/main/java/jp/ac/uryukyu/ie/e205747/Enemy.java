@@ -2,25 +2,20 @@ package jp.ac.uryukyu.ie.e205747;
 
 /**
  * 敵クラス。
- *  String name; //敵の名前
- *  int hitPoint; //敵のHP
- *  int attack; //敵の攻撃力
- *  boolean dead; //敵の生死状態。true=死亡。
  * Created by tnal on 2016/11/13.
+ * Edited by e205747 on 2020/12/09.
  */
-public class Enemy {
-    private String name;
-    private int hitPoint;
-    private int attack;
-    private boolean dead;
-
+public class Enemy extends LivingThing{
     /**
-     * コンストラクタ。名前、最大HP、攻撃力を指定する。
-     * @param name モンスター名
-     * @param maximumHP モンスターのHP
+     * コンストラクタ。名前、最大HP,攻撃力を指定する。
+     * @param name モンスターの名前
+     * @param hitPoint モンスターのHP
      * @param attack モンスターの攻撃力
      */
-   
+<<<<<<< HEAD
+    public Enemy(String name, int maximumHP, int attack){
+        super(name, maximumHP, attack);
+=======
     public Enemy (String name, int maximumHP, int attack) {
         this.name = name;
         hitPoint = maximumHP;
@@ -35,11 +30,13 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
-        if (!dead == true){
+        
+        if (dead == false){
             int damage = (int)(Math.random() * attack);
-            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
             hero.wounded(damage);
-        }   
+        }
+>>>>>>> c9fc302daa26acb7a042ff57e847bf51623701f2
     }
 
     /**
@@ -47,72 +44,12 @@ public class Enemy {
      * 指定されたダメージを hitPoint から引き、死亡判定を行う。
      * @param damage 受けたダメージ
      */
+    @Override
     public void wounded(int damage){
         hitPoint -= damage;
         if( hitPoint < 0 ) {
             dead = true;
-            System.out.printf("モンスター%sは倒れた。\n", this.name);
+            System.out.printf("モンスター%sは倒れた。\n", name);
         }
     }
-
-    /**
-     * nameのゲッター
-    */
-    public String getName(){
-        return this.name;
-    }
-
-    /**
-     * hitpointのゲッター
-    */
-    public int getHitPoint(){
-        return this.hitPoint;
-    }
-
-    /**
-     * attackのゲッター
-     */
-    public int getAttack(){
-        return this.attack;
-    }
-
-    /**
-     * deadのゲッター
-    */
-    public boolean getDead(){
-        return this.dead;
-    }
-
-    /**
-     * nameのセッター
-     * @param name に代入 
-    */
-     public void setName(String name){
-        this.name = name;
-    }
-
-    /**
-     * hitPointのセッター
-     * @param hitPoint に代入
-     */
-    public void setHitPoint(int hitPoint){
-        this.hitPoint = hitPoint;
-    }
-
-    /**
-     * attackのセッター
-     * @param attack に代入
-     */
-    public void setAttack(int attack){
-        this.attack = attack;
-    }
-
-    /**
-     * deadのセッター
-     * @param dead に代入
-    */
-     public void setDead(boolean dead){
-        this.dead = dead;
-    }
-
 }
