@@ -5,7 +5,7 @@ package jp.ac.uryukyu.ie.e205747;
  * Created by tnal on 2016/11/13.
  * Edited by e205747 on 2020/12/09.
  */
-public class Warrior extends LivingThing {
+public class Warrior extends Hero {
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
      * @param name 戦士名
