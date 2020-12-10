@@ -43,14 +43,23 @@ public class LivingThing {
         return this.hitPoint;
     }
 
+    /**
+     * hithointのセッター
+    */
     public void setHitPoint(int hitPoint){
         this.hitPoint = hitPoint;
     }
 
+    /**
+     * attackのゲッター
+    */
     public int getAttack() {
         return this.attack;
     }
 
+    /**
+     * attackのセッター
+    */
     public void setAttack(int attack){
         this.attack = attack;
     }
@@ -62,6 +71,9 @@ public class LivingThing {
         return this.dead;
     }
 
+    /**
+     * deadのセッター
+    */
     public void setDead(Boolean dead){
         this.dead = dead;
     }
