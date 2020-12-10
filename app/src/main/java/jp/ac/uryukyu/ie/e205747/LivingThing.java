@@ -10,10 +10,10 @@ package jp.ac.uryukyu.ie.e205747;
  *  Edited by e205747 on 2020/12/9.
  */
 public class LivingThing {
-    String name;
-    int hitPoint;
-    int attack; 
-    boolean dead;
+    private String name;
+    private int hitPoint;
+    private int attack; 
+    private boolean dead;
     
     /**
      * コンストラクタ。名前、最大HP、攻撃力を指定する。
@@ -36,13 +36,34 @@ public class LivingThing {
         return this.name;
     }
 
+    /**
+     * hithointのゲッター
+    */
+    public int getHitPoint() {
+        return this.hitPoint;
+    }
 
+    public void setHitPoint(int hitPoint){
+        this.hitPoint = hitPoint;
+    }
+
+    public int getAttack() {
+        return this.attack;
+    }
+
+    public void setAttack(int attack){
+        this.attack = attack;
+    }
 
     /**
      * deadのゲッター
     */
     public boolean isDead() {
         return this.dead;
+    }
+
+    public void setDead(Boolean dead){
+        this.dead = dead;
     }
 
     /**
@@ -60,7 +81,7 @@ public class LivingThing {
 
     /**
      * 自身へ攻撃されたときのダメージ処理をするメソッド。
-     * 指定されたダメージを hitPoint から引き、死亡判定を行う。
+     * 指定されたダメージを Attack から引き、死亡判定を行う。
      * @param damage 受けたダメージ
      */
     public void wounded(int damage){
